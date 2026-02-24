@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { Container } from '@/components/base/Container'
 import { Link } from '@/components/base/Link'
+import JiraCollector from '@/components/JiraCollector'
 
 
 const LinkOut = ({ href, ariaLabel='external link', children }) => (
@@ -103,6 +104,18 @@ const faqs = [
       answer: <>
         Yes. Cytoscape Desktop allows you to save your networks and analysis 
         directly to the Network Data Exchange &#40;<LinkOut href="https://www.ndexbio.org/">NDEx</LinkOut>&#41;, the primary cloud storage for Cytoscape.
+      </>,
+    },
+    {
+      question: 'What do I do if I find an issue in Cytoscape Desktop?',
+      answer: <>
+        <p>Please click the button below to submit a bug report.
+        Once received, our technical team will review the details and prioritize a fix for a future update. 
+        To help us resolve the issue faster, please include a brief description of the steps you took before the bug occurred and any relevant screenshots.
+        </p>
+        <div className="mt-4 text-center">
+          <JiraCollector />
+        </div>
       </>,
     },
     {
