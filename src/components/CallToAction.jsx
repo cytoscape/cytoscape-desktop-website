@@ -190,20 +190,20 @@ export function CallToAction() {
       id="download"
       className="relative overflow-hidden bg-gray-900 sm:py-28 py-10"
     >
-      <div className="absolute left-20 top-1/2 -translate-y-1/2 sm:left-1/2 sm:-translate-x-1/2">
-        <CircleBackground color="#fff" className="animate-spin-slower" size="720" />
+      <div className="absolute left-20 top-1/2 -translate-y-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:block hidden">
+        <CircleBackground color="#fff" size="720" className="animate-spin-slower" />
       </div>
       <Container className="relative">
-        <div className="mx-auto max-w-lg sm:text-center">
-          <h2 className="-mt-16 mb-10 font-medium tracking-tight text-white sm:text-4xl text-xl">
-            Download<br />
+        <div className="mx-auto max-w-lg text-center">
+          <h2 className="mb-10 font-medium tracking-tight text-white sm:text-4xl text-3xl">
+            Download
               {category === 'older' ? 
-                'Older Versions'
+                <> Older Versions</>
                 : 
-                <>the Latest Version <span className="text-yellow-50 font-mono font-normal text-sm">({latestRelease?.version})</span></>
+                <> the Latest Version <span className="text-yellow-50 font-mono font-normal text-sm">({latestRelease?.version})</span></>
               }
           </h2>
-          <div className="relative mt-6 min-h-[240px]">
+          <div className="relative mt-6 sm:min-h-[240px] min-h-[300px]">
           {latestRelease && olderReleases && (
           <>
             <LatestVersionPanel latestRelease={latestRelease} hide={category === 'older'} />
