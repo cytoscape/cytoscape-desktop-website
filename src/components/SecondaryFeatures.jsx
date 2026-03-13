@@ -9,7 +9,7 @@ import {
   ArrowDownOnSquareStackIcon,
   ShareIcon,
   SquaresPlusIcon,
-  CodeBracketIcon,
+  CommandLineIcon,
 } from '@heroicons/react/24/outline'
 
 
@@ -90,7 +90,7 @@ const features = [
         as well as functionality from Cytoscape apps.
       </>,
     href: 'https://manual.cytoscape.org/en/latest/Programmatic_Access_to_Cytoscape_Features_Scripting.html',
-    icon: CodeBracketIcon,
+    icon: CommandLineIcon,
   },
 ]
 
