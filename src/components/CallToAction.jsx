@@ -4,11 +4,13 @@ import { Button } from '@/components/base/Button'
 import { Container } from '@/components/base/Container'
 import { Link } from '@/components/base/Link'
 import { CircleBackground } from '@/components/CircleBackground'
-import { ArrowDownTrayIcon } from '@heroicons/react/24/outline'
+import { ArrowDownTrayIcon, FaceFrownIcon } from '@heroicons/react/24/outline'
 
 
 const BASE_URL = 'https://github.com/cytoscape/cytoscape/releases/'
 const BASE_OLD_URL = 'http://chianti.ucsd.edu/cytoscape-'
+
+const validOSs = ['windows', 'macos', 'unix', 'linux']
 
 const minorVersion = (version) => {
   // Since it's a semantic version, and there are only versions 3.x.x,
@@ -94,6 +96,8 @@ function LatestVersionPanel({ latestRelease, hide }) {
       }
     )
   }, []);
+
+  const isValidOS = userAgent && validOSs.includes(userAgent.os.name.toLowerCase())
   
   return (
     <div
@@ -103,6 +107,8 @@ function LatestVersionPanel({ latestRelease, hide }) {
           : 'opacity-100 translate-y-0'
       }`}
     >
+    {isValidOS && (
+    <>
       <p className="text-md text-gray-400">
         Adoptium OpenJDK Java 17 will be automatically installed if not already present.
         If you experience difficulty with this, manual installers for OpenJDK Java 
@@ -112,15 +118,35 @@ function LatestVersionPanel({ latestRelease, hide }) {
         <Button
           variant="solid"
           color="primary"
+          disabled={!userAgent}
           href={releaseFileURL(latestRelease, userAgent)}
           className="min-w-44 pl-4 pr-6"
         >
           <ArrowDownTrayIcon className="h-6 w-6 flex-none" />
           <span className="ml-2.5">
-            Download for {userAgent?.os.name} ({userAgent?.cpu.architecture})
+            Download for {userAgent?.os?.name} ({userAgent?.cpu?.architecture})
           </span>
         </Button>
       </div>
+    </>
+    )}
+    {!isValidOS && (
+      <div className="mt-1 flex flex-col items-center gap-2">
+        <FaceFrownIcon aria-hidden="true" className="h-24 w-24 text-gray-600" />
+        <p className="text-md text-gray-400">
+          Your system could not be detected or is not supported.
+          Please&nbsp;
+          <Link
+            ariaLabel="Show versions for other platforms"
+            href={releaseURL(latestRelease?.version)}
+            darkBackground={true}
+            linkOut
+          >
+            select your platform
+          </Link>&nbsp;to download the latest version of Cytoscape.
+        </p>
+      </div>
+    )}
     </div>
   )
 }
