@@ -3,8 +3,9 @@ import { UAParser } from 'ua-parser-js'
 import { Button } from '@/components/base/Button'
 import { Container } from '@/components/base/Container'
 import { Link } from '@/components/base/Link'
+import { ReleaseNotes } from '@/components/ReleaseNotes'
 import { CircleBackground } from '@/components/CircleBackground'
-import { ArrowDownTrayIcon, FaceFrownIcon } from '@heroicons/react/24/outline'
+import { ArrowDownTrayIcon, DocumentTextIcon, FaceFrownIcon } from '@heroicons/react/24/outline'
 
 
 const BASE_URL = 'https://github.com/cytoscape/cytoscape/releases/'
@@ -78,14 +79,14 @@ const releaseFileURL = (release, userAgent) => {
 
   const nminorVersion = minorVersion(release.version)
   const baseUrl = nminorVersion >= 6.1 ? BASE_URL : BASE_OLD_URL
-  const versionUnderscore = release.version.split('.').join('_');
+  const versionUnderscore = release.version.split('.').join('_')
     
   return `${baseUrl}download/${release.version}/Cytoscape_${versionUnderscore}_${sufix}`
 }
 
 
-function LatestVersionPanel({ latestRelease, hide }) {
-  const [userAgent , setUserAgent] = useState(null);
+function LatestVersionPanel({ latestRelease, hide, onOpenReleaseNotes }) {
+  const [userAgent , setUserAgent] = useState(null)
 
   const parser = new UAParser()
 
@@ -95,7 +96,7 @@ function LatestVersionPanel({ latestRelease, hide }) {
         setUserAgent(ua)
       }
     )
-  }, []);
+  }, [])
 
   const isValidOS = userAgent && validOSs.includes(userAgent.os.name.toLowerCase())
   
@@ -114,7 +115,7 @@ function LatestVersionPanel({ latestRelease, hide }) {
         If you experience difficulty with this, manual installers for OpenJDK Java 
         can be downloaded <Link href="https://adoptium.net/" ariaLabel="OpenJDK Java download" linkOut darkBackground>here</Link>.
       </p>
-      <div className="mt-8 flex justify-center">
+      <div className="mt-8 ml-auto mr-auto w-fit flex flex-col gap-2 items-end">
         <Button
           variant="solid"
           color="primary"
@@ -125,6 +126,17 @@ function LatestVersionPanel({ latestRelease, hide }) {
           <ArrowDownTrayIcon className="h-6 w-6 flex-none" />
           <span className="ml-2.5">
             Download for {userAgent?.os?.name} ({userAgent?.cpu?.architecture})
+          </span>
+        </Button>
+        <Button
+          variant="text"
+          color="gray"
+          onClick={() => onOpenReleaseNotes(latestRelease?.version)}
+          className="flex items-center group"
+        >
+          <DocumentTextIcon className="h-5 w-5 flex-none text-gray-500 group-hover:text-gray-400" />
+          <span className="ml-2 text-gray-500 font-normal group-hover:text-gray-400 group-hover:underline underline-offset-2">
+            Release Notes
           </span>
         </Button>
       </div>
@@ -151,20 +163,22 @@ function LatestVersionPanel({ latestRelease, hide }) {
   )
 }
 
-function OlderVersionsPanel({ olderReleases, hide }) {
+function OlderVersionsPanel({ olderReleases, hide, onOpenReleaseNotes }) {
   const versionList = (items) => (
-    <ul className="w-full">
+    <ul className="flex flex-col items-center pr-10">
       {items.map(({ version, date }) => (
         <li
           key={version}
-          className="grid grid-cols-[120px_1fr] gap-4 py-2"
+          className="grid grid-cols-[100px_1fr] gap-2 py-2"
         >
           <span className="text-right tabular-nums text-yellow-50 font-mono ">
             <Link href={releaseURL(version)} darkBackground linkOut>{version}</Link>
           </span>
-          <span className="text-left text-gray-400 text-sm font-mono" >
-            {date}
-          </span>
+          <DocumentTextIcon
+            onClick={() => onOpenReleaseNotes(version)}
+            aria-label={`View release notes for version ${version}`}
+            className="h-5 w-5 flex-none text-gray-500 hover:text-gray-400 cursor-pointer"
+          />
         </li>
       ))}
     </ul>
@@ -178,7 +192,7 @@ function OlderVersionsPanel({ olderReleases, hide }) {
           : 'opacity-100 translate-y-0'
       }`}
     >
-      <div className="w-full flex sm:flex-row flex-col xl:gap-7 lg:gap-5 gap-0 overflow-y-auto h-56">
+      <div className="w-fit flex sm:flex-row flex-col mx-auto xl:gap-7 lg:gap-5 gap-0 overflow-y-auto h-56">
         {versionList(olderReleases.slice(0, Math.ceil(olderReleases.length / 2)))}
         {versionList(olderReleases.slice(Math.ceil(olderReleases.length / 2)))}
       </div>
@@ -188,28 +202,36 @@ function OlderVersionsPanel({ olderReleases, hide }) {
 
 
 export function CallToAction() {
-  const [releases, setReleases] = useState([]);
-  const [category, setCategory] = useState('latest'); // latest, older
+  const [releases, setReleases] = useState([])
+  const [category, setCategory] = useState('latest') // latest, older
+  const [releaseNotesVersion, setReleaseNotesVersion] = useState(null)
+  const [releaseNotesOpen, setReleaseNotesOpen] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/data/releases.json'); 
+        const response = await fetch('/data/releases.json')
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error('Network response was not ok')
         }
-        const jsonData = await response.json();
-        setReleases(jsonData.releases);
+        const jsonData = await response.json()
+        setReleases(jsonData.releases)
       } catch (error) {
-        console.error('Error fetching cytoscape releases data:', error);
+        console.error('Error fetching cytoscape releases data:', error)
       }
-    };
-
-    fetchData();
+    }
+    fetchData()
   }, [])
 
-  const latestRelease = releases.length > 0 ? releases[0] : null;
-  const olderReleases = releases.length > 1 ? releases.slice(1) : [];
+  const handleReleaseNotesOpen = (version) => {
+    // Implement logic to open release notes for the specified version
+    console.log(`Open release notes for version: ${version}`)
+    setReleaseNotesVersion(version)
+    setReleaseNotesOpen(true)
+  }
+
+  const latestRelease = releases.length > 0 ? releases[0] : null
+  const olderReleases = releases.length > 1 ? releases.slice(1) : []
 
   return (
     <section
@@ -232,8 +254,16 @@ export function CallToAction() {
           <div className="relative mt-6 sm:min-h-[240px] min-h-[300px]">
           {latestRelease && olderReleases && (
           <>
-            <LatestVersionPanel latestRelease={latestRelease} hide={category === 'older'} />
-            <OlderVersionsPanel olderReleases={olderReleases} hide={category !== 'older'} />
+            <LatestVersionPanel
+              latestRelease={latestRelease}
+              hide={category === 'older'}
+              onOpenReleaseNotes={(version) => handleReleaseNotesOpen(version)}
+            />
+            <OlderVersionsPanel 
+              olderReleases={olderReleases}
+              hide={category !== 'older'}
+              onOpenReleaseNotes={(version) => handleReleaseNotesOpen(version)}
+            />
           </>
           )}
           </div>
@@ -260,6 +290,11 @@ export function CallToAction() {
         )}
         </div>
       </div>
+      <ReleaseNotes
+        version={releaseNotesVersion}
+        open={releaseNotesOpen}
+        onClose={() => setReleaseNotesOpen(false)}
+      />
     </section>
   )
 }
