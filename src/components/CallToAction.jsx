@@ -108,42 +108,14 @@ function LatestVersionPanel({ latestRelease, hide, onOpenReleaseNotes }) {
           : 'opacity-100 translate-y-0'
       }`}
     >
-    {isValidOS && (
-    <>
+    {isValidOS ? (
       <p className="text-md text-gray-400">
         Adoptium OpenJDK Java 17 will be automatically installed if not already present.
         If you experience difficulty with this, manual installers for OpenJDK Java 
         can be downloaded <Link href="https://adoptium.net/" ariaLabel="OpenJDK Java download" linkOut darkBackground>here</Link>.
       </p>
-      <div className="mt-8 ml-auto mr-auto w-fit flex flex-col gap-2 items-end">
-        <Button
-          variant="solid"
-          color="primary"
-          disabled={!userAgent}
-          href={releaseFileURL(latestRelease, userAgent)}
-          className="min-w-44 pl-4 pr-6"
-        >
-          <ArrowDownTrayIcon className="h-6 w-6 flex-none" />
-          <span className="ml-2.5">
-            Download for {userAgent?.os?.name} ({userAgent?.cpu?.architecture})
-          </span>
-        </Button>
-        <Button
-          variant="text"
-          color="gray"
-          onClick={() => onOpenReleaseNotes(latestRelease?.version)}
-          className="flex items-center group"
-        >
-          <DocumentTextIcon className="h-5 w-5 flex-none text-gray-500 group-hover:text-gray-400" />
-          <span className="ml-2 text-gray-500 font-normal group-hover:text-gray-400 group-hover:underline underline-offset-2">
-            Release Notes
-          </span>
-        </Button>
-      </div>
-    </>
-    )}
-    {!isValidOS && (
-      <div className="mt-1 flex flex-col items-center gap-2">
+    ) : (
+      <div className="flex flex-col items-center gap-2">
         <FaceFrownIcon aria-hidden="true" className="h-24 w-24 text-gray-600" />
         <p className="text-md text-gray-400">
           Your system could not be detected or is not supported.
@@ -159,6 +131,33 @@ function LatestVersionPanel({ latestRelease, hide, onOpenReleaseNotes }) {
         </p>
       </div>
     )}
+      <div className="mt-8 ml-auto mr-auto w-fit flex flex-col gap-2 items-end">
+      {isValidOS && (
+        <Button
+          variant="solid"
+          color="primary"
+          disabled={!userAgent}
+          href={releaseFileURL(latestRelease, userAgent)}
+          className="min-w-44 pl-4 pr-6"
+        >
+          <ArrowDownTrayIcon className="h-6 w-6 flex-none" />
+          <span className="ml-2.5">
+            Download for {userAgent?.os?.name} ({userAgent?.cpu?.architecture})
+          </span>
+        </Button>
+      )}
+        <Button
+          variant="text"
+          color="gray"
+          onClick={() => onOpenReleaseNotes(latestRelease?.version)}
+          className="flex items-center group"
+        >
+          <DocumentTextIcon className="h-5 w-5 flex-none text-gray-500 group-hover:text-gray-400" />
+          <span className="ml-2 text-gray-500 font-normal group-hover:text-gray-400 group-hover:underline underline-offset-2">
+            Release Notes
+          </span>
+        </Button>
+      </div>
     </div>
   )
 }
