@@ -366,28 +366,28 @@ function ExportScreen(props) {
             <g>
               <g>
                 <path d="M180.833,60.5 L347.5,60.5 L347.5,247.833 L180.833,247.833 L180.833,60.5 z" fill="#ffffff"/>
-                <path d="M180.833,60.5 L347.5,60.5 L347.5,247.833 L180.833,247.833 L180.833,60.5 z" fill-opacity="0" stroke="#d5d5d5" stroke-width="1"/>
+                <path d="M180.833,60.5 L347.5,60.5 L347.5,247.833 L180.833,247.833 L180.833,60.5 z" fillOpacity="0" stroke="#d5d5d5" strokeWidth="1"/>
               </g>
               <g>
-                <path d="M325.558,125.286 L304.933,133.328" fill-opacity="0" stroke="#c5c5c5" stroke-width="1.2"/>
-                <path d="M260.203,114.536 L256.572,84.81" fill-opacity="0" stroke="#c5c5c5" stroke-width="0.95"/>
-                <path d="M263.938,120.043 L287.663,132.381" fill-opacity="0" stroke="#c5c5c5" stroke-width="2.8"/>
-                <path d="M302.903,170.642 L298.05,146.467" fill-opacity="0" stroke="#c5c5c5" stroke-width="1.6"/>
-                <path d="M243.258,200.17 L289.895,144.22" fill-opacity="0" stroke="#c5c5c5" stroke-width="0.95"/>
-                <path d="M287.626,141.081 L222.445,174.227" fill-opacity="0" stroke="#c5c5c5" stroke-width="0.95"/>
-                <path d="M301.72,176.556 L289.471,194.494" fill-opacity="0" stroke="#c5c5c5" stroke-width="0.95"/>
-                <path d="M300.688,172.522 L234.731,141.386" fill-opacity="0" stroke="#c5c5c5" stroke-width="0.95"/>
-                <path d="M300.69,175.232 L244.48,201.909" fill-opacity="0" stroke="#c5c5c5" stroke-width="0.95"/>
-                <path d="M257.678,116.147 L235.212,99.645" fill-opacity="0" stroke="#c5c5c5" stroke-width="2"/>
-                <path d="M238.976,208.982 L234.609,229.022" fill-opacity="0" stroke="#c5c5c5" stroke-width="0.95"/>
-                <path d="M277.551,195.297 L232.565,144.575" fill-opacity="0" stroke="#c5c5c5" stroke-width="0.95"/>
-                <path d="M234.485,132.743 L257.436,120.121" fill-opacity="0" stroke="#c5c5c5" stroke-width="2"/>
-                <path d="M239.019,199.022 L228.161,147.01" fill-opacity="0" stroke="#c5c5c5" stroke-width="0.95"/>
-                <path d="M219.86,172.139 L224.383,147.068" fill-opacity="0" stroke="#c5c5c5" stroke-width="0.95"/>
-                <path d="M244.907,203.845 L274.565,202.855" fill-opacity="0" stroke="#c5c5c5" stroke-width="1.8"/>
-                <path d="M215.575,176.218 L194.599,178.152" fill-opacity="0" stroke="#c5c5c5" stroke-width="0.95"/>
-                <path d="M221.414,178.89 L237.074,199.985" fill-opacity="0" stroke="#c5c5c5" stroke-width="0.95"/>
-                <path d="M259.773,122.064 L241.25,199.059" fill-opacity="0" stroke="#c5c5c5" stroke-width="0.95"/>
+                <path d="M325.558,125.286 L304.933,133.328" fillOpacity="0" stroke="#c5c5c5" strokeWidth="1.2"/>
+                <path d="M260.203,114.536 L256.572,84.81" fillOpacity="0" stroke="#c5c5c5" strokeWidth="0.95"/>
+                <path d="M263.938,120.043 L287.663,132.381" fillOpacity="0" stroke="#c5c5c5" strokeWidth="2.8"/>
+                <path d="M302.903,170.642 L298.05,146.467" fillOpacity="0" stroke="#c5c5c5" strokeWidth="1.6"/>
+                <path d="M243.258,200.17 L289.895,144.22" fillOpacity="0" stroke="#c5c5c5" strokeWidth="0.95"/>
+                <path d="M287.626,141.081 L222.445,174.227" fillOpacity="0" stroke="#c5c5c5" strokeWidth="0.95"/>
+                <path d="M301.72,176.556 L289.471,194.494" fillOpacity="0" stroke="#c5c5c5" strokeWidth="0.95"/>
+                <path d="M300.688,172.522 L234.731,141.386" fillOpacity="0" stroke="#c5c5c5" strokeWidth="0.95"/>
+                <path d="M300.69,175.232 L244.48,201.909" fillOpacity="0" stroke="#c5c5c5" strokeWidth="0.95"/>
+                <path d="M257.678,116.147 L235.212,99.645" fillOpacity="0" stroke="#c5c5c5" strokeWidth="2"/>
+                <path d="M238.976,208.982 L234.609,229.022" fillOpacity="0" stroke="#c5c5c5" strokeWidth="0.95"/>
+                <path d="M277.551,195.297 L232.565,144.575" fillOpacity="0" stroke="#c5c5c5" strokeWidth="0.95"/>
+                <path d="M234.485,132.743 L257.436,120.121" fillOpacity="0" stroke="#c5c5c5" strokeWidth="2"/>
+                <path d="M239.019,199.022 L228.161,147.01" fillOpacity="0" stroke="#c5c5c5" strokeWidth="0.95"/>
+                <path d="M219.86,172.139 L224.383,147.068" fillOpacity="0" stroke="#c5c5c5" strokeWidth="0.95"/>
+                <path d="M244.907,203.845 L274.565,202.855" fillOpacity="0" stroke="#c5c5c5" strokeWidth="1.8"/>
+                <path d="M215.575,176.218 L194.599,178.152" fillOpacity="0" stroke="#c5c5c5" strokeWidth="0.95"/>
+                <path d="M221.414,178.89 L237.074,199.985" fillOpacity="0" stroke="#c5c5c5" strokeWidth="0.95"/>
+                <path d="M259.773,122.064 L241.25,199.059" fillOpacity="0" stroke="#c5c5c5" strokeWidth="0.95"/>
               </g>
               <path d="M342.372,121.026 C342.372,126.134 338.437,130.275 333.585,130.275 C328.731,130.275 324.797,126.134 324.797,121.026 C324.797,115.917 328.731,111.776 333.585,111.776 C338.437,111.776 342.372,115.917 342.372,121.026 z" fill="#999999"/>
               <path d="M263.357,74.163 C263.357,79.271 259.423,83.412 254.569,83.412 C249.716,83.412 245.782,79.271 245.782,74.163 C245.782,69.054 249.716,64.913 254.569,64.913 C259.423,64.913 263.357,69.054 263.357,74.163 z" fill="#666666"/>
