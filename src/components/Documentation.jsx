@@ -176,7 +176,7 @@ function Card({
 }
 
 export function Documentation() {
-  let [selectedPersona, setSelectedPersona] = useState('user')
+  const [selectedPersona, setSelectedPersona] = useState('user')
   const selectedCards = selectedPersona === 'user' ? userCards : developerCards
 
   return (
