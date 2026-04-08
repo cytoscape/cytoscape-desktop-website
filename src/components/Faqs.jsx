@@ -25,12 +25,34 @@ const Citation = ({ href, className, children }) => {
 const faqs = [
   [
     {
+      question: 'What is Cytoscape Desktop?',
+      answer: <>
+        Cytoscape Desktop is a desktop application for visualizing, analyzing, and exploring complex networks.
+        It’s widely used in bioinformatics, systems biology, and other fields that deal with interconnected data.
+      </>,
+    },
+    {
       question: 'What are the main benefits of using Cytoscape Desktop?',
       answer: <>
         Cytoscape Desktop is a <strong>free</strong>, <strong>open-source</strong> comprehensive suite of software tools for network biology research, 
         encompassing data analysis, visualisation and sharing capabilities. 
         It is also <strong>extensible</strong>, enabling the user to customize their usage via <LinkOut href="https://apps.cytoscape.org/">apps</LinkOut> and services. 
         Cytoscape functionality is <strong>continuously improved</strong> and expanded as part of ongoing, active development.
+      </>,
+    },
+    {
+      question: 'Who should use Cytoscape Desktop?',
+      answer: <>
+        Cytoscape is designed for researchers, data scientists, and analysts working with networks&mdash;especially in genomics, proteomics, and other life sciences.
+        It’s also used in social network analysis, cybersecurity, and knowledge graph exploration.
+      </>,
+    },
+    {
+      question: 'What kinds of data can I analyze?',
+      answer: <>
+        You can work with any network data composed of nodes and edges.
+        Common examples include protein-protein interaction networks, gene regulatory networks, pathways, and more. 
+        Cytoscape supports various file formats and integrates with many biological databases.
       </>,
     },
     {
@@ -104,6 +126,13 @@ const faqs = [
       answer: <>
         Yes. Cytoscape Desktop allows you to save your networks and analysis 
         directly to the Network Data Exchange &#40;<LinkOut href="https://www.ndexbio.org/">NDEx</LinkOut>&#41;, the primary cloud storage for Cytoscape.
+      </>,
+    },
+    {
+      question: 'Where can I find help if I get stuck?',
+      answer: <>
+        The Cytoscape community is very active. You can access our comprehensive <LinkOut href="https://manual.cytoscape.org/en/stable/">User Manual</LinkOut>, watch video tutorials on our <LinkOut href="https://www.youtube.com/@CytoscapeTV">YouTube channel</LinkOut>, 
+        or join the Cytoscape Help <LinkOut href="https://groups.google.com/g/cytoscape-helpdesk">Google Group</LinkOut> to ask specific questions to the developers and power users.
       </>,
     },
     {
