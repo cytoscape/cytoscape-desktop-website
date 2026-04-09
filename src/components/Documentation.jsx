@@ -125,7 +125,7 @@ function Card({
   featured = false,
 }) {
   return (
-    <section
+    <div
       className={clsx(
         'flex flex-col overflow-hidden rounded-3xl p-6 shadow-lg shadow-gray-900/5',
         featured ? 'order-first bg-gray-900 lg:order-none' : 'bg-white',
@@ -171,7 +171,7 @@ function Card({
           ))}
         </ul>
       </div>
-    </section>
+    </div>
   )
 }
 
@@ -198,7 +198,7 @@ export function Documentation() {
           </p>
         </div>
 
-        <div className="mt-8 flex justify-center">
+        <div className="mt-12 flex justify-center">
           <div className="relative">
             <RadioGroup
               value={selectedPersona}
@@ -245,7 +245,7 @@ export function Documentation() {
         </div>
 
         <div className={clsx(
-          'mx-auto mt-16 grid max-w-2xl items-start gap-x-8 gap-y-10 sm:mt-20 lg:max-w-none grid-cols-1',
+          'mx-auto mt-10 grid lg:max-w-none max-w-2xl gap-x-8 gap-y-5',
           `lg:grid-cols-${selectedCards.length}`,
         )}>
         {selectedCards.map((group) => (
@@ -253,7 +253,7 @@ export function Documentation() {
         ))}
         </div>
 
-        <div className="mx-auto mt-10 sm:max-w-2xl">
+        <div className="mx-auto lg:mt-10 mt-5 sm:max-w-2xl">
           <Card
             name="Need More Help?"
             icon={QuestionMarkCircleIcon}
