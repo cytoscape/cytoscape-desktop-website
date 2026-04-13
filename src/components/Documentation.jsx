@@ -77,6 +77,15 @@ const developerCards = [
     links: [
       { label: 'Code Repository on GitHub', href: 'https://github.com/cytoscape/cytoscape' },
       { label: 'Latest Javadoc', href: 'https://cytoscape.org/javadoc/current_release/' },
+    ],
+  },
+  {
+    name: 'Build & Release',
+    featured: false,
+    icon: Square3Stack3DIcon,
+    description:
+      'Use these services to access builds, dependencies, and CI status for Cytoscape Desktop development.',
+    links: [
       { label: 'Latest Builds', href: 'https://cytoscape-builds.ucsd.edu/cytoscape-builds/' },
       { label: 'Nexus Repository', href: 'https://nrnb-nexus.ucsd.edu/' },
       { label: 'Travis CI', href: 'https://app.travis-ci.com/github/cytoscape' },
@@ -245,8 +254,9 @@ export function Documentation() {
         </div>
 
         <div className={clsx(
-          'mx-auto mt-10 grid lg:max-w-none max-w-2xl gap-x-8 gap-y-5',
-          `lg:grid-cols-${selectedCards.length}`,
+          'mx-auto mt-10 grid max-w-2xl gap-x-8 gap-y-5 lg:max-w-none',
+          selectedCards.length === 2 && 'lg:grid-cols-2',
+          selectedCards.length === 3 && 'lg:grid-cols-3',
         )}>
         {selectedCards.map((group) => (
           <Card key={group.name} {...group} />
