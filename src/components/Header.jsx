@@ -72,7 +72,7 @@ export function Header() {
         <Container className="relative z-10 flex justify-between py-8">
           <div className="relative z-10 flex items-center gap-16">
             <a href="/" aria-label="Home">
-              <AppLogo className="sm:h-12 h-10 w-auto" />
+              <AppLogo className="sm:h-12 h-10 w-auto -mt-2" />
             </a>
             <div className="hidden lg:flex lg:gap-10">
               <NavLinks />
