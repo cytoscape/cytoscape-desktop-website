@@ -11,7 +11,7 @@ const LinkOut = ({ href, ariaLabel='external link', children }) => (
 )
 
 const Citation = ({ href, className, children }) => {
-  className = clsx('block whitespace-pre-wrap text-xs', className)
+  className = clsx('block whitespace-pre-wrap text-xs border rounded-md bg-gray-100 p-2', className)
 
   return (
     <code className={className}>
@@ -151,7 +151,7 @@ const faqs = [
       question: 'How do I cite Cytoscape Desktop?',
       answer: <>
         Please cite the original Cytoscape paper when you use Cytoscape Desktop. This is critical to sustaining our federal funding.
-        <Citation href="https://doi.org/10.1101/gr.1239303" className="my-2 pl-4">
+        <Citation href="https://doi.org/10.1101/gr.1239303" className="my-2 ml-4">
           Shannon P, Markiel A, Ozier O, Baliga NS, Wang JT, Ramage D, Amin N, Schwikowski B, Ideker T. <i>Cytoscape: a software environment for integrated models of biomolecular interaction networks.</i> Genome Research. 2003 Nov; 13(11):2498-504.
         </Citation>
       </>,
