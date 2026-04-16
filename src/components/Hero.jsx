@@ -114,7 +114,7 @@ export function Hero() {
                 <span className="ml-2.5">Download</span>
               </Button>
               <Button
-                href="https://youtu.be/P1IT7GsEp4c?list=PLFQS98nmv__zUUAIfU_dGXFi-qZP90VVQ"
+                href="https://www.youtube.com/@CytoscapeTV"
                 target="_blank"
                 rel="noreferrer"
                 variant="outline"
