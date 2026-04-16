@@ -15,9 +15,9 @@ const Citation = ({ href, className, children }) => {
 
   return (
     <code className={className}>
-      <a href={href} target="_blank" rel="noreferrer" className="no-underline hover:text-complement-500">
+      <LinkOut href={href} className="no-underline">
         {children}
-      </a>
+      </LinkOut>
     </code>
   )
 }
