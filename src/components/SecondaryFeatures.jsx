@@ -45,7 +45,7 @@ const features = [
   {
     name: 'Connect to External Public Databases',
     description: <>
-      Cytoscape can directly connect to external public databases to import networks and annotation data.
+      Cytoscape Desktop can directly connect to external public databases to import networks and annotation data.
       That includes Pathway Commons, IntAct, BioMart, and NCBI Entrez Gene.
     </>,
     href: 'https://manual.cytoscape.org/en/latest/Creating_Networks.html#import-networks-from-public-databases',
@@ -66,7 +66,7 @@ const features = [
     name: 'Install Third-Party Apps',
     description: <>
       Apps are available for network and molecular profile analysis.
-      Cytoscape is a software written in Java and you can write your own App for data analysis, import, and visualization.
+      Cytoscape Desktop is a software written in Java and you can write your own App for data analysis, import, and visualization.
       More Apps are available at the <LinkOut href="https://apps.cytoscape.org/">Cytoscape App Store</LinkOut>.
     </>,
     href: 'https://apps.cytoscape.org/',
@@ -85,7 +85,7 @@ const features = [
   {
     name: 'Automate your Workflows',
     description: <>
-        Use Cytoscape's RESTful API to control it programmatically with your choice of programming languages.
+        Use Cytoscape Desktop's RESTful API to control it programmatically with your choice of programming languages.
         You can access its core features such as creating networks and exporting images,
         as well as functionality from Cytoscape apps.
       </>,
@@ -102,12 +102,12 @@ export function SecondaryFeatures() {
       className="py-20 sm:py-32 border-b border-gray-200"
     >
       <Container>
-        <div className="mx-auto max-w-2xl sm:text-center">
+        <div className="mx-auto max-w-3xl sm:text-center">
           <h2 className="text-3xl font-medium tracking-tight text-gray-900">
-            What Can You Do With Cytoscape?
+            What Can You Do With Cytoscape Desktop?
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            Cytoscape supports many use cases in molecular and systems biology, genomics, and proteomics.
+            Cytoscape Desktop supports many use cases in molecular and systems biology, genomics, and proteomics.
           </p>
         </div>
         <ul

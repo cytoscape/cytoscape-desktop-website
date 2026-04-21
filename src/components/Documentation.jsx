@@ -17,7 +17,7 @@ const userCards = [
     featured: false,
     icon: PresentationChartBarIcon,
     description:
-      'Start here if you are a bench or computational biologist new to Cytoscape, and want to learn how to use it for your research.',
+      'Start here if you are a bench or computational biologist new to Cytoscape Desktop, and want to learn how to use it for your research.',
     links: [
       { label: 'Quick tour', href: 'https://cytoscape.github.io/cytoscape-tutorials/protocols/tour-of-cytoscape/' },
       { label: 'Introduction to Cytoscape', href: 'http://www.slideshare.net/keiono/introduction-to-biological-network-analysis-and-visualization-with-cytoscape-part1' },
@@ -26,11 +26,11 @@ const userCards = [
     ],
   },
   {
-    name: 'Master Cytoscape',
+    name: 'Master Cytoscape Desktop',
     featured: false,
     icon: AcademicCapIcon,
     description:
-      'Learn how to extract the most out of Cytoscape by mastering its features and capabilities.',
+      'Learn how to extract the most out of Cytoscape Desktop by mastering its features and capabilities.',
     links: [
       { label: 'Advanced Topics', href: 'http://www.slideshare.net/keiono/cytoscape-tutorial-session-2-at-utkbrin-bioinformatics-summit-2014-4112014' },
       { label: 'Tutorials & Protocols', href: 'http://tutorials.cytoscape.org' },
@@ -43,7 +43,7 @@ const userCards = [
     featured: false,
     icon: NewspaperIcon,
     description:
-      'Read scientific papers that use Cytoscape to understand how it can be used to analyze and visualize your data.',
+      'Read scientific papers that use Cytoscape Desktop to understand how it can be used to analyze and visualize your data.',
     links: [
       { label: 'Nature Protocols sample workflow', href: 'https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1758-4' },
       { label: 'Cytoscape Automation ', href: 'https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1758-4' },
@@ -195,7 +195,7 @@ export function Documentation() {
       className="border-t border-gray-200 bg-gray-100 py-20 sm:py-32"
     >
       <Container className="flex flex-col items-center">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <h2
             id="documentation-title"
             className="text-3xl font-medium tracking-tight text-gray-900"
@@ -203,7 +203,7 @@ export function Documentation() {
             Documentation.
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            Whether you are new to Cytoscape or want to get involved by developing a Cytoscape App, our documentation has you covered.
+            Whether you are new to Cytoscape Desktop or want to get involved by developing a Cytoscape App, our documentation has you covered.
           </p>
         </div>
 

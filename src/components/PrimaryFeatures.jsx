@@ -610,7 +610,7 @@ export function PrimaryFeatures() {
             Every tool you need for your bioinformatics research
           </h2>
           <p className="mt-2 text-lg text-gray-400">
-            Cytoscape will guide you through the process of transforming your raw data into interactive networks.
+            Cytoscape Desktop will guide you through the process of transforming your raw data into interactive networks.
             Use our tools to analyze the results, share them with collaborators and finally publish them.
           </p>
         </div>
