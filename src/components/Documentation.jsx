@@ -200,7 +200,7 @@ export function Documentation() {
             id="documentation-title"
             className="text-3xl font-medium tracking-tight text-gray-900"
           >
-            Documentation.
+            Documentation
           </h2>
           <p className="mt-2 text-lg text-gray-600">
             Whether you are new to Cytoscape Desktop or want to get involved by developing a Cytoscape App, our documentation has you covered.
