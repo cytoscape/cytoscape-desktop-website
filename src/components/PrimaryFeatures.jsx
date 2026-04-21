@@ -355,8 +355,8 @@ function ExportScreen(props) {
       <MotionAppScreenBody
         {...(props.animated ? { ...bodyAnimation, custom: props.custom } : {})}
       >
-        <div className="divide-y divide-gray-100">
-          <svg x="0" y="0" width="350" height="310" viewBox="0, 0, 350, 310">
+        <div className="flex items-center justify-center w-full divide-y divide-gray-100">
+          <svg x="0" y="0" width="350" height="310" viewBox="0, 0, 350, 310" className="h-full w-full scale-95">
             <path d="M5,12 L345,12 C346.105,12 347,12.895 347,14 L347,22 C347,23.105 346.105,24 345,24 L5,24 C3.895,24 3,23.105 3,22 L3,14 C3,12.895 3.895,12 5,12 z" fill="#dddddd"/>
             <path d="M5,28 L249.667,28 C250.771,28 251.667,28.895 251.667,30 L251.667,38 C251.667,39.105 250.771,40 249.667,40 L5,40 C3.895,40 3,39.105 3,38 L3,30 C3,28.895 3.895,28 5,28 z" fill="#dddddd"/>
             <path d="M4,60 L70.667,60 C71.219,60 71.667,60.448 71.667,61 L71.667,67 C71.667,67.552 71.219,68 70.667,68 L4,68 C3.448,68 3,67.552 3,67 L3,61 C3,60.448 3.448,60 4,60 z" fill="#dddddd"/>
