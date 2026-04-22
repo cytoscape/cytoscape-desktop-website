@@ -27,7 +27,7 @@ const faqs = [
     {
       question: 'What is Cytoscape Desktop?',
       answer: <>
-        Cytoscape Desktop is a desktop application for visualizing, analyzing, and exploring complex networks.
+        Cytoscape Desktop is an application for visualizing, analyzing, and exploring complex networks.
         It’s widely used in bioinformatics, systems biology, and other fields that deal with interconnected data.
       </>,
     },
@@ -95,7 +95,7 @@ const faqs = [
         Extensive <LinkOut href="https://github.com/cytoscape/cytoscape/wiki/Cytoscape-3.0-App-Development">documentation and guides</LinkOut> are 
         available to support software developers. 
         Most Cytoscape Desktop apps are open-source, and interested developers are encouraged 
-        to <LinkOut href="https://cytoscape.org/documentation_developers.html">join our development community</LinkOut> as contributors. 
+        to <LinkOut href="https://apps.cytoscape.org/">join our development community</LinkOut> as contributors. 
       </>,
     },
     {
@@ -105,7 +105,7 @@ const faqs = [
         For example, If you are new to Cytoscape and want to use core Cytoscape functionality without having to install anything, 
         start with <LinkOut href="https://web.cytoscape.org/">Cytoscape Web</LinkOut>. 
         On the other hand, if you are working with large networks, or need access to specialized analysis methods, 
-        or if you want to integrate Cytoscape in programmatic workflows, <LinkOut href="https://cytoscape.org/">Cytoscape Desktop</LinkOut> is the right choice. 
+        or if you want to integrate Cytoscape in programmatic workflows, Cytoscape Desktop is the right choice. 
         The two applications also make it easy to switch between them seamlessly using built-in integration features 
         and the <LinkOut href="https://cytoscape.org/cx/">CX2</LinkOut> file format.
       </>,
@@ -113,9 +113,9 @@ const faqs = [
   ],
   [
     {
-      question: 'How can I use the Cytoscape Desktop to create figures and support data for my paper?',
+      question: 'How can I use Cytoscape Desktop to create figures and support data for my paper?',
       answer: <>
-        Starting with a network in <LinkOut href="https://cytoscape.org/">Cytoscape Desktop</LinkOut>, 
+        Starting with a network in Cytoscape Desktop, 
         you can customize its style and layout before exporting high-resolution, publication-ready images in multiple formats &#40;PNG, PDF etc&#41;. 
         You can also publish your network and analysis directly to the Network Data Exchange &#40;<LinkOut href="https://www.ndexbio.org/">NDEx</LinkOut>&#41;, 
         and request a DOI to include in your publications.
