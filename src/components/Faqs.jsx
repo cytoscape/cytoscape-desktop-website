@@ -177,7 +177,9 @@ export function Faqs() {
           <p className="mt-2 text-lg text-gray-600">
             If you have anything else you want to ask,{' '}
             <a
-              href="mailto:info@example.com"
+              href="https://groups.google.com/g/cytoscape-helpdesk"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-900 underline"
             >
               reach out to us
