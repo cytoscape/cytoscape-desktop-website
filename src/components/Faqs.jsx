@@ -175,16 +175,10 @@ export function Faqs() {
             Frequently asked questions
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            If you have anything else you want to ask,{' '}
-            <a
-              href="https://groups.google.com/g/cytoscape-helpdesk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-900 underline"
-            >
-              reach out to us
-            </a>
-            .
+            If you have any other questions, feel free to contact us at the
+            {' '}<LinkOut href="https://baderlab.org/">Bader Lab</LinkOut>,
+            {' '}<LinkOut href="https://gladstone.org/">Gladstone Institutes</LinkOut> or
+            {' '}<LinkOut href="https://idekerlab.org/">Ideker Lab</LinkOut>.
           </p>
         </div>
         <ul

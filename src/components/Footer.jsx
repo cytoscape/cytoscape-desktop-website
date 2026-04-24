@@ -3,7 +3,7 @@ import { NavLinks } from '@/components/NavLinks'
 import { CytoscapeLogo } from '@/components/Logos'
 import { Link } from '@/components/base/Link'
 
-import consortiumLogo from '@/images/logos/cytoscape-consortium.svg'
+// import consortiumLogo from '@/images/logos/cytoscape-consortium.svg'
 import logoUCSD from '@/images/logos/ucsd.svg'
 import logoGladstone from '@/images/logos/gladstone.png'
 import logoUofT from '@/images/logos/uoft.svg'
