@@ -26,14 +26,14 @@ export function Footer() {
     <footer className="border-t bg-gray-50 border-gray-200">
       <Container>
         <div className="flex flex-col items-start justify-between gap-y-12 pb-6 pt-16 lg:flex-row lg:items-center lg:py-16">
-          <div>
+          <div className="space-y-8">
             <nav className="flex gap-8">
               <NavLinks />
             </nav>
-            <div className="relative mt-11 lg:col-span-7 xl:col-span-6">
+            <div className="relative lg:col-span-7 xl:col-span-6">
               <ul
                 role="list"
-                className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-x-10 gap-y-8 lg:mx-0 lg:justify-start"
+                className="mx-auto flex max-w-xl flex-wrap justify-center gap-x-10 gap-y-8 lg:mx-0 lg:justify-start"
               >
                 {[
                   // ['The Cytoscape Consortium', consortiumLogo, 'https://cytoscapeconsortium.org/'],
@@ -48,6 +48,20 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-8 max-w-xl text-sm text-gray-500 lg:mx-0 lg:text-left">
+                Contact:{' '}
+                <Link href="https://baderlab.org/" target="_blank" rel="noreferrer" linkOut>
+                  Bader Lab
+                </Link>{' '}
+                <span className="text-gray-300">|</span>{' '}
+                <Link href="https://gladstone.org/" target="_blank" rel="noreferrer" linkOut>
+                  Gladstone Institutes
+                </Link>{' '}
+                <span className="text-gray-300">|</span>{' '}
+                <Link href="https://idekerlab.org/" target="_blank" rel="noreferrer" linkOut>
+                  Ideker Lab
+                </Link>
+              </p>
             </div>
           </div>
           <div className="group relative -mx-4 flex items-center self-stretch p-4 transition-colors hover:bg-gray-100 sm:self-auto sm:rounded-2xl lg:mx-0 lg:self-auto lg:p-6">
