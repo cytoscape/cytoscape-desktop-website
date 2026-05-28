@@ -13,6 +13,56 @@ const BASE_OLD_URL = 'http://chianti.ucsd.edu/cytoscape-'
 
 const validOSs = ['windows', 'macos', 'unix', 'linux']
 
+/**
+ * Patch function to detect platform information, especially CPU architecture,
+ * which is not reliably available in all browsers via UAParser.
+ * Just remember that this will never be 100% accurate, and we should always provide a fallback
+ * for users to manually select their platform if detection fails.
+ */
+const getPlatformInfo = async () => {
+  const parser = new UAParser();
+  const result = parser.getResult();
+  let arch = result.cpu.architecture; // may be undefined
+
+  // 1. Try UA-CH (Chromium: Chrome, Edge, Brave, Opera)
+  if (!arch && navigator.userAgentData?.getHighEntropyValues) {
+    try {
+      const ch = await navigator.userAgentData.getHighEntropyValues([
+        'architecture', 'bitness',
+      ]);
+      if (ch.architecture === 'arm') arch = 'arm64';
+      else if (ch.architecture === 'x86') arch = ch.bitness === '64' ? 'amd64' : 'ia32';
+    } catch {}
+  }
+
+  // 2. WebGL fallback for Safari/Firefox on macOS
+  if (!arch && result.os.name === 'macOS') {
+    arch = detectMacArchViaWebGL();
+  }
+
+  // 3. Last-resort guess from UA hints
+  if (!arch) {
+    const ua = navigator.userAgent;
+    if (/aarch64|arm64/i.test(ua)) arch = 'arm64';
+    else if (/x86_64|Win64|WOW64|x64/i.test(ua)) arch = 'amd64';
+  }
+
+  return { ...result, cpu: { architecture: arch } };
+}
+
+const detectMacArchViaWebGL = () => {
+  try {
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (!gl) return undefined;
+    const ext = gl.getExtension('WEBGL_debug_renderer_info');
+    const renderer = ext ? gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) : '';
+    if (/Apple (M\d|GPU)/i.test(renderer)) return 'arm64';
+    if (/Intel/i.test(renderer)) return 'amd64';
+  } catch {}
+  return undefined;
+}
+
 const minorVersion = (version) => {
   // Since it's a semantic version, and there are only versions 3.x.x,
   // we can ignore the "major" number until we release Cytoscape 4.0 :-)
@@ -71,7 +121,7 @@ const releaseFileURL = (release, userAgent) => {
 
   if (os === 'unix' || os === 'linux') {
     sufix = 'unix.sh'
-  } else if (os === 'macos') {
+  } else if (os === 'macos' || os === 'mac os') {
     sufix = `macos_${userAgent.cpu.architecture === 'arm64' ? 'aarch64' : 'x64'}.dmg`
   } else if (os === 'windows') {
     sufix = `windows_${userAgent.cpu.architecture === 'arm64' ? 'arm64' : '64bit'}.exe`
@@ -88,14 +138,11 @@ const releaseFileURL = (release, userAgent) => {
 function LatestVersionPanel({ latestRelease, hide, onOpenReleaseNotes }) {
   const [userAgent , setUserAgent] = useState(null)
 
-  const parser = new UAParser()
-
   useEffect(() => {
-    const result = parser.getResult().withClientHints()
-      .then((ua) => {
-        setUserAgent(ua)
-      }
-    )
+    getPlatformInfo().then((ua) => {
+      console.log('User Agent:', ua)
+      setUserAgent(ua)
+    })
   }, [])
 
   const isValidOS = userAgent && validOSs.includes(userAgent.os.name.toLowerCase())
@@ -142,7 +189,7 @@ function LatestVersionPanel({ latestRelease, hide, onOpenReleaseNotes }) {
         >
           <ArrowDownTrayIcon className="h-6 w-6 flex-none" />
           <span className="ml-2.5">
-            Download for {userAgent?.os?.name} ({userAgent?.cpu?.architecture})
+            Download for {userAgent?.os?.name} {userAgent?.cpu?.architecture ? `(${userAgent.cpu.architecture})` : ''}
           </span>
         </Button>
       )}
