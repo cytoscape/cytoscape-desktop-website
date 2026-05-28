@@ -1,14 +1,8 @@
 import clsx from 'clsx'
 import { Container } from '@/components/base/Container'
-import { Link } from '@/components/base/Link'
+import { LinkOut } from '@/components/base/Link'
 import JiraCollector from '@/components/JiraCollector'
 
-
-const LinkOut = ({ href, ariaLabel='external link', children }) => (
-  <Link href={href} aria-label={ariaLabel} linkOut>
-    {children}
-  </Link>
-)
 
 const Citation = ({ href, className, children }) => {
   className = clsx('block whitespace-pre-wrap text-xs border rounded-md bg-gray-100 p-2', className)
@@ -67,16 +61,16 @@ const faqs = [
   ],
   [
     {
-      question: 'How is Cytoscape Desktop addressing the needs of bench biologists?',
+      question: 'How does Cytoscape Desktop address the needs of bench biologists?',
       answer: <>
-        Cytoscape Desktop serves bench biologists by streamlining <Link href="https://cytoscape-home.pages.dev/#genes">common analysis workflows</Link> in Cytoscape apps, 
+        Cytoscape Desktop serves bench biologists by streamlining <LinkOut href="https://cytoscape-home.pages.dev/#genes">common analysis workflows</LinkOut> in Cytoscape apps, 
         providing easy access to powerful analysis methods without the need for complex data processing or programmatic knowledge. 
-        Cytoscape Desktop makes it easy to access and utilize pre-analysed data and networks via <LinkOut href="https://www.ndexbio.org/">NDEx</LinkOut>, 
+        Cytoscape Desktop makes it easy to access and use pre-analysed data and networks via <LinkOut href="https://www.ndexbio.org/">NDEx</LinkOut>, 
         and provides comprehensive <LinkOut href="https://github.com/cytoscape/cytoscape-tutorials/wiki">training materials</LinkOut> tailored to bench biologists.
       </>,
     },
     {
-      question: 'How is Cytoscape Desktop addressing the needs of computational biologists?',
+      question: 'How does Cytoscape Desktop address the needs of computational biologists?',
       answer: <>
         Cytoscape Desktop provides programmatic access via the <LinkOut href="https://apps.cytoscape.org/apps/cyrest">cyREST API</LinkOut> and 
         the <LinkOut href="https://github.com/cytoscape/py4cytoscape">py4cytoscape</LinkOut> Python 
@@ -88,14 +82,14 @@ const faqs = [
     },
 
     {
-      question: 'How is Cytoscape Desktop addressing the needs of software developers?',
+      question: 'How does Cytoscape Desktop address the needs of software developers?',
       answer: <>
         Cytoscape Desktop functionality can be expanded through the use of <LinkOut href="https://apps.cytoscape.org/">apps</LinkOut> to 
         accommodate specific data types, analysis, visualizations and connections to other tools. 
         Extensive <LinkOut href="https://github.com/cytoscape/cytoscape/wiki/Cytoscape-3.0-App-Development">documentation and guides</LinkOut> are 
         available to support software developers. 
         Most Cytoscape Desktop apps are open-source, and interested developers are encouraged 
-        to <LinkOut href="https://apps.cytoscape.org/">join our development community</LinkOut> as contributors. 
+        to <LinkOut href="https://github.com/cytoscape/cytoscape/wiki//Cytoscape-App-Ladder">join our development community</LinkOut> as contributors. 
       </>,
     },
     {
@@ -150,7 +144,7 @@ const faqs = [
     {
       question: 'How do I cite Cytoscape Desktop?',
       answer: <>
-        Please cite the original Cytoscape paper when you use Cytoscape Desktop. This is critical to sustaining our federal funding.
+        Please cite the original Cytoscape paper when you use Cytoscape Desktop. This is critical to sustaining our funding.
         <Citation href="https://doi.org/10.1101/gr.1239303" className="my-2 ml-4">
           Shannon P, Markiel A, Ozier O, Baliga NS, Wang JT, Ramage D, Amin N, Schwikowski B, Ideker T. <i>Cytoscape: a software environment for integrated models of biomolecular interaction networks.</i> Genome Research. 2003 Nov; 13(11):2498-504.
         </Citation>
@@ -177,7 +171,7 @@ export function Faqs() {
           <p className="mt-2 text-lg text-gray-600">
             If you have any other questions, feel free to contact us at the
             {' '}<LinkOut href="https://baderlab.org/">Bader Lab</LinkOut>,
-            {' '}<LinkOut href="https://gladstone.org/">Gladstone Institutes</LinkOut> or
+            {' '}<LinkOut href="https://gladstone.org/science/bioinformatics-core">Gladstone Institutes</LinkOut> or
             {' '}<LinkOut href="https://idekerlab.org/">Ideker Lab</LinkOut>.
           </p>
         </div>

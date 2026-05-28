@@ -1,7 +1,6 @@
-import PropTypes from 'prop-types'
 import { colors } from '@/styles/tailwind'
 import { Container } from '@/components/base/Container'
-import { Link } from '@/components/base/Link'
+import { LinkOut } from '@/components/base/Link'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/20/solid'
 import {
   ArrowUpOnSquareStackIcon,
@@ -12,17 +11,6 @@ import {
   CommandLineIcon,
 } from '@heroicons/react/24/outline'
 
-
-const LinkOut = ({ href, ariaLabel = 'external link', children }) => (
-  <Link href={href} aria-label={ariaLabel} linkOut>
-    {children}
-  </Link>
-)
-LinkOut.propTypes = {
-  href: PropTypes.string.isRequired,
-  ariaLabel: PropTypes.string,
-  children: PropTypes.node.isRequired,
-}
 
 const features = [
   {
@@ -51,9 +39,8 @@ const features = [
       That includes 
       {' '}<LinkOut href="https://www.pathwaycommons.org/">Pathway Commons</LinkOut>,
       {' '}<LinkOut href="https://www.ebi.ac.uk/intact/">IntAct</LinkOut>,
-      {' '}<LinkOut href="https://www.biomart.org/">BioMart</LinkOut>, and 
+      {' '}<LinkOut href="https://www.ensembl.org/biomart/martview">BioMart</LinkOut>, and 
       {' '}<LinkOut href="https://www.ncbi.nlm.nih.gov/gene">NCBI Entrez Gene</LinkOut>.
-      And we continue to develop new service clients for popular databases.
     </>,
     href: 'https://manual.cytoscape.org/en/latest/Creating_Networks.html#import-networks-from-public-databases',
     icon: GlobeAltIcon,
@@ -84,7 +71,7 @@ const features = [
     description: <>
       You can export networks as publishable-quality images.
       Supported formats are: PDF, PS, SVG, PNG, JPEG, and BMP files.
-      Vector images (PDF and PS) can be modified by other application such as Adobe Illustrator for further enhancements.
+      Vector images (PDF and PS) can be modified by other applications such as Adobe Illustrator for further enhancements.
     </>,
     href: 'https://manual.cytoscape.org/en/latest/Export_Your_Data.html',
     icon: ArrowDownOnSquareStackIcon,

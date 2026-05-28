@@ -1,6 +1,9 @@
+import PropTypes from 'prop-types'
+
+
 export function Link({
   href,
-  ariaLabel='external link',
+  ariaLabel='link',
   darkBackground = false,
   linkOut = false,
   onClick,
@@ -21,6 +24,33 @@ export function Link({
       {children}
     </a>
   )
+}
+Link.propTypes = {
+  href: PropTypes.string,
+  ariaLabel: PropTypes.string,
+  darkBackground: PropTypes.bool,
+  linkOut: PropTypes.bool,
+  onClick: PropTypes.func,
+  children: PropTypes.node.isRequired,
+}
+
+export function LinkOut({
+  href,
+  ariaLabel='external link',
+  darkBackground = false,
+  children
+}) {
+  return (
+    <Link href={href} aria-label={ariaLabel} darkBackground={darkBackground} linkOut>
+      {children}
+    </Link>
+  )
+}
+LinkOut.propTypes = {
+  href: PropTypes.string.isRequired,
+  ariaLabel: PropTypes.string,
+  darkBackground: PropTypes.bool,
+  children: PropTypes.node.isRequired,
 }
 
 export default Link

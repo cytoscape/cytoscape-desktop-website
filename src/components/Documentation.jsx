@@ -1,11 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import PropTypes from 'prop-types'
 import { Radio, RadioGroup } from '@headlessui/react'
 import clsx from 'clsx'
 
-import { Link } from '@/components/base/Link'
+import { LinkOut } from '@/components/base/Link'
 import { Container } from '@/components/base/Container'
 import { AcademicCapIcon, QuestionMarkCircleIcon, UserGroupIcon } from '@heroicons/react/24/solid'
 import { PresentationChartBarIcon, NewspaperIcon, Square3Stack3DIcon } from '@heroicons/react/24/outline'
@@ -48,7 +47,7 @@ const userCards = [
       { label: 'Nature Protocols sample workflow', href: 'https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1758-4' },
       { label: 'Cytoscape Automation ', href: 'https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1758-4' },
       { label: 'Nature Methods', href: 'http://www.ncbi.nlm.nih.gov/pubmed/23132118' },
-      { label: 'Original Cytoscape paper', href: 'http://www.genome.org/cgi/content/full/13/11/2498' },
+      { label: 'Original Cytoscape paper', href: 'https://pubmed.ncbi.nlm.nih.gov/14597658/' },
     ],
   },
 ]
@@ -114,18 +113,6 @@ function CheckIcon(props) {
   )
 }
 
-const LinkOut = ({ href, ariaLabel = 'external link', darkBackground = false, children }) => (
-  <Link href={href} aria-label={ariaLabel} darkBackground={darkBackground} linkOut>
-    {children}
-  </Link>
-)
-LinkOut.propTypes = {
-  href: PropTypes.string.isRequired,
-  ariaLabel: PropTypes.string,
-  darkBackground: PropTypes.bool,
-  children: PropTypes.node.isRequired,
-}
-
 function Card({
   name,
   icon: Icon,
@@ -171,11 +158,11 @@ function Card({
             <li key={link.label} className="flex py-2">
               <CheckIcon
                 className={clsx(
-                  'h-6 w-6 flex-none',
+                  'h-6 w-6 flex-none mr-2',
                   featured ? 'text-white' : 'text-cyan-500',
                 )}
               />
-              <Link href={link.href} linkOut darkBackground={featured} className="ml-4">{link.label}</Link>
+              <LinkOut href={link.href} darkBackground={featured}>{link.label}</LinkOut>
             </li>
           ))}
         </ul>

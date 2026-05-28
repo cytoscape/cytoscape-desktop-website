@@ -1,7 +1,7 @@
 import { Container } from '@/components/base/Container'
 import { NavLinks } from '@/components/NavLinks'
 import { CytoscapeLogo } from '@/components/Logos'
-import { Link } from '@/components/base/Link'
+import { LinkOut } from '@/components/base/Link'
 
 // import consortiumLogo from '@/images/logos/cytoscape-consortium.svg'
 import logoUCSD from '@/images/logos/ucsd.svg'
@@ -38,7 +38,7 @@ export function Footer() {
                 {[
                   // ['The Cytoscape Consortium', consortiumLogo, 'https://cytoscapeconsortium.org/'],
                   ['University of California San Diego', logoUCSD, 'https://ucsd.edu/'],
-                  ['Gladstone Institutes', logoGladstone, 'https://gladstone.org/'],
+                  ['Gladstone Institutes', logoGladstone, 'https://gladstone.org/science/bioinformatics-core'],
                   ['University of Toronto', logoUofT, 'https://www.utoronto.ca/'],
                 ].map(([name, logo, href]) => (
                   <li key={name}>
@@ -50,17 +50,17 @@ export function Footer() {
               </ul>
               <p className="mt-8 max-w-xl text-sm text-gray-500 lg:mx-0 lg:text-left">
                 Contact:{' '}
-                <Link href="https://baderlab.org/" target="_blank" rel="noreferrer" linkOut>
+                <LinkOut href="https://baderlab.org/">
                   Bader Lab
-                </Link>{' '}
+                </LinkOut>{' '}
                 <span className="text-gray-300">|</span>{' '}
-                <Link href="https://gladstone.org/" target="_blank" rel="noreferrer" linkOut>
+                <LinkOut href="https://gladstone.org/science/bioinformatics-core">
                   Gladstone Institutes
-                </Link>{' '}
+                </LinkOut>{' '}
                 <span className="text-gray-300">|</span>{' '}
-                <Link href="https://idekerlab.org/" target="_blank" rel="noreferrer" linkOut>
+                <LinkOut href="https://idekerlab.org/">
                   Ideker Lab
-                </Link>
+                </LinkOut>
               </p>
             </div>
           </div>
@@ -85,17 +85,17 @@ export function Footer() {
         <div className="flex lg:flex-row flex-col lg:items-start items-center border-t border-gray-200 pb-12 pt-8 lg:justify-between lg:pt-6 lg:space-x-10">
           <p className="mt-6 text-sm text-gray-500 lg:mt-0 max-w-3xl lg:text-left text-center">
             Funding for continued development and maintenance of Cytoscape is provided by the  
-            U.S. <Link href="https://www.genome.gov/" target="_blank" rel="noreferrer" linkOut>National Human Genome Research Institute (NHGRI)</Link> under 
+            U.S. <LinkOut href="https://www.genome.gov/">National Human Genome Research Institute (NHGRI)</LinkOut> under 
             award number NIH NHGRI U24 HG012107 (Previously: R01 HG009979; R01 GM070743).
             <br />
             Cytoscape user support, education and new initiatives are supported 
-            by the <Link href="https://nrnb.org/" target="_blank" rel="noreferrer" linkOut>National Resource for Network Biology (NRNB)</Link> under 
+            by the <LinkOut href="https://nrnb.org/">National Resource for Network Biology (NRNB)</LinkOut> under 
             award number P41 GM103504.
             <br />
             The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.
           </p>
           <p className="mt-6 text-sm text-gray-500 lg:mt-0 flex-1 text-center lg:text-right whitespace-nowrap">
-            &copy;{new Date().getFullYear()} <Link href="http://www.cytoscapeconsortium.org/" target="_blank" rel="noreferrer" linkOut>Cytoscape Consortium</Link>. 
+            &copy;{new Date().getFullYear()} <LinkOut href="http://www.cytoscapeconsortium.org/">Cytoscape Consortium</LinkOut>. 
             All rights reserved.
           </p>
         </div>
