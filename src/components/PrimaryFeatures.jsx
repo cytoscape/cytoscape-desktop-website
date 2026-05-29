@@ -425,6 +425,9 @@ function usePrevious(value) {
 function FeaturesDesktop() {
   let [changeCount, setChangeCount] = useState(0)
   let [selectedIndex, setSelectedIndex] = useState(0)
+  let [userInteracted, setUserInteracted] = useState(false)
+  let [inView, setInView] = useState(false)
+  let containerRef = useRef(null)
   let prevIndex = usePrevious(selectedIndex)
   let isForwards = prevIndex === undefined ? true : selectedIndex > prevIndex
 
@@ -437,15 +440,43 @@ function FeaturesDesktop() {
     { leading: true },
   )
 
+  useEffect(() => {
+    if (!containerRef.current) return
+    let observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setInView(true)
+      },
+      { threshold: 0.25 },
+    )
+    observer.observe(containerRef.current)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!inView || userInteracted) return
+    let interval = setInterval(() => {
+      setSelectedIndex((i) => (i + 1) % features.length)
+      setChangeCount((c) => c + 1)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [inView, userInteracted])
+
+  let stopAutoplay = () => setUserInteracted(true)
+
   return (
     <TabGroup
       as="div"
+      ref={containerRef}
       className="grid grid-cols-12 items-center gap-8 lg:gap-16 xl:gap-24"
       selectedIndex={selectedIndex}
       onChange={onChange}
       vertical
     >
-      <TabList className="relative z-10 order-last col-span-6 space-y-6">
+      <TabList
+        className="relative z-10 order-last col-span-6 space-y-6"
+        onPointerDown={stopAutoplay}
+        onKeyDown={stopAutoplay}
+      >
         {features.map((feature, featureIndex) => (
           <div
             key={feature.name}
