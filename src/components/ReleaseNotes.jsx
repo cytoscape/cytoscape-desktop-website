@@ -67,7 +67,7 @@ export function ReleaseNotes({ version, open, onClose }) {
                   <div className="-mt-2.5">
                     <DialogTitle
                       as="h3"
-                      className="mb-6 text-base font-semibold leading-6 text-gray-900"
+                      className="mt-1 mb-6 text-base font-semibold leading-6 text-gray-900"
                     >
                       Release Notes for Version {version}
                     </DialogTitle>
