@@ -152,14 +152,18 @@ export function ImageGallery({
   const doubled = [...images, ...images]
 
   return (
-    <>
+    <section
+      id="gallery"
+      aria-label="Image gallery"
+      className="bg-gray-900 py-2 border-t-2 border-gray-500"
+    >
       <div
         ref={rootRef}
-        className="w-full overflow-hidden pt-1 pb-1 border-t-8 border-b-8 border-gray-900"
+        className="lg:max-w-7xl max-w-full mx-auto lg:px-8"
       >
         <div
           ref={trackRef}
-          className="flex gap-4 overflow-x-auto"
+          className="flex overflow-x-auto"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           <style>{`div::-webkit-scrollbar { display: none; }`}</style>
@@ -170,7 +174,7 @@ export function ImageGallery({
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               onClick={() => setActive(img)}
-              className="flex-shrink-0 rounded overflow-hidden border-2 border-transparent transition-transform duration-200 hover:border-complement-400 hover:shadow-lg focus:outline-none focus-visible:border-complement-400 active:border-complement-600"
+              className="flex-shrink-0 rounded-xl overflow-hidden border-4 border-transparent transition-transform duration-200 hover:border-complement-400 focus:outline-none focus-visible:border-complement-400 active:border-complement-600"
               style={{ height: thumbSize, width: thumbSize }}
             >
               <img
@@ -246,6 +250,6 @@ export function ImageGallery({
           </div>
         </Dialog>
       </Transition>
-    </>
+    </section>
   )
 }
