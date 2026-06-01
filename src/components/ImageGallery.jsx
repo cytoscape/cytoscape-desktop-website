@@ -7,6 +7,34 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/20/solid'
 
 const images = [
   {
+    title: 'Frontiers in Molecular Biosciences, 2024',
+    body: 'Role of 14-3-3 protein family in the pathobiology of EBV in immortalized B cells and Alzheimer\'s disease',
+    author: 'Prankur Awasthi, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11322100/',
+    img: 'PMC11322100.png',
+  },
+  {
+    title: 'Front Endocrinol (Lausanne), 2026',
+    body: 'Integrated RNA-seq and sQTL analysis reveal immune and splicing regulatory features underlying relapse and remission after treatment of Graves’ disease',
+    author: 'Yang Wu, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13212118/',
+    img: 'PMC13212118.png',
+  },
+  {
+    title: 'Medicine (Baltimore), 2022',
+    body: 'Uncovering the molecular mechanism of Gynostemma pentaphyllum (Thunb.) Makino against breast cancer using network pharmacology and molecular docking',
+    author: 'Wen-Xiang Wang, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9750687/',
+    img: 'PMC9750687.png',
+  },
+  {
+    title: 'Medicine (Baltimore), 2021',
+    body: 'Exploring potential mechanisms of Suhexiang Pill against COVID-19 based on network pharmacology and molecular docking',
+    author: 'Jialin Li, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC8702253/',
+    img: 'PMC8702253.png',
+  },
+  {
     title: 'Journal of Cellular Biochemistry, 2018',
     body: 'Reconstruction and analysis of the aberrant lncRNA-miRNA-mRNA network based on competitive endogenous RNA in CESC',
     author: 'Jukun Song, et al.',
@@ -19,13 +47,6 @@ const images = [
     author: 'Nicholas Hassan, et al.',
     src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13221635/',
     img: 'PMC13221635.png',
-  },
-  {
-    title: 'Science Advances, 2026',
-    body: 'Eco-evolutionary dynamics of massive, parallel bacteriophage outbreaks in compost communities',
-    author: 'Jeroen Meijer, et al.',
-    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13220884/',
-    img: 'PMC13220884.png',
   },
   {
     title: 'PLoS One, 2026',
@@ -117,6 +138,13 @@ const images = [
     author: 'Magali E Ridano, et al.',
     src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12229269/',
     img: 'PMC12229269.png',
+  },
+  {
+    title: 'F1000Research, 2024',
+    body: 'Network pharmacology and in silico approaches to uncover multitargeted mechanism of action of Zingiber zerumbet rhizomes for the treatment of idiopathic pulmonary fibrosis',
+    author: 'Bharath Harohalli Byregowda, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11809647/',
+    img: 'PMC11809647.png',
   },
 ]
 
