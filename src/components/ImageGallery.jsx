@@ -7,88 +7,116 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/20/solid'
 
 const images = [
   {
-    title: 'PLOS ONE, 2022',
-    body: 'Identification of hub genes associated with COVID-19 and idiopathic pulmonary fibrosis by integrated bioinformatics analysis',
-    author: 'Qianyi Chen, et al.',
-    doi: 'https://doi.org/10.1371/journal.pone.0262737',
-    src: 'journal.pone.0262737.png',
+    title: 'Journal of Cellular Biochemistry, 2018',
+    body: 'Reconstruction and analysis of the aberrant lncRNA-miRNA-mRNA network based on competitive endogenous RNA in CESC',
+    author: 'Jukun Song, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC6055788/',
+    img: 'PMC6055788.png',
   },
   {
-    title: 'J. Cellular Biochemistry, 2018',
-    body: 'Reconstruction and analysis of the aberrant lncRNA‐miRNA‐mRNA network based on competitive endogenous RNA in CESC',
-    author: 'Jukun Song, et al.',
-    doi: 'https://doi.org/10.1002%2Fjcb.26850',
-    src: 'jcb.26850.png',
+    title: 'Plant Physiology, 2025',
+    body: 'Optimizing bio-orthogonal non-canonical amino acid tagging (BONCAT) for low-disruption labeling of Arabidopsis proteins in vivo',
+    author: 'Nicholas Hassan, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13221635/',
+    img: 'PMC13221635.png',
+  },
+  {
+    title: 'Science Advances, 2026',
+    body: 'Eco-evolutionary dynamics of massive, parallel bacteriophage outbreaks in compost communities',
+    author: 'Jeroen Meijer, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13220884/',
+    img: 'PMC13220884.png',
+  },
+  {
+    title: 'PLoS One, 2026',
+    body: 'GSEA and the coexpression network approach identify novel pathway connections of molecular processes affected in Porto-sinusoidal vascular disease',
+    author: 'Aishwarya Iyer, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13220999/',
+    img: 'PMC13220999.png',
   },
   {
     title: 'Genome Biology, 2019',
     body: 'Cytoscape Automation: empowering workflow-based network analysis',
     author: 'David Otasek, et al.',
-    doi: 'https://doi.org/10.1186/s13059-019-1758-4',
-    src: 's13059-019-1758-4.png',
-  },
-  {
-    title: 'Laboratory Investigation, 2008',
-    body: 'The fibromatosis signature defines a robust stromal response in breast carcinoma',
-    author: 'Andrew H Beck, et al.',
-    doi: 'https://doi.org/10.1038%2Flabinvest.2008.31',
-    src: 'labinvest.2008.31.png',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC6717989/',
+    img: 'PMC6717989.png',
   },
   {
     title: 'BMC Bioinformatics, 2013',
     body: 'Visualization of protein interaction networks: problems and solutions',
     author: 'Giuseppe Agapito, et al.',
-    doi: 'https://doi.org/10.1186%2F1471-2105-14-S1-S1',
-    src: '1471-2105-14-S1-S1.png',
-  },
-  {
-    title: 'Human Genomics, 2022',
-    body: 'Construction of the coexpression network involved in the pathogenesis of thyroid eye disease via bioinformatics analysis',
-    author: 'Jinxing Hu, et al.',
-    doi: 'https://doi.org/10.1186%2Fs40246-022-00412-0',
-    src: 's40246-022-00412-0.png',
-  },
-  {
-    title: 'Frontiers Bioeng. Biotechnol., 2020',
-    body: 'A Guide to Conquer the Biological Network Era Using Graph Theory',
-    author: 'Mikaela Koutrouli, et al.',
-    doi: 'https://doi.org/10.3389%2Ffbioe.2020.00034',
-    src: 'fbioe.2020.00034.png',
-  },
-  {
-    title: 'World Journal of Transplantation, 2016',
-    body: 'Proteomics for rejection diagnosis in renal transplant patients: Where are we now?',
-    author: 'Wilfried Gwinner, et al.',
-    doi: 'https://doi.org/10.5500%2Fwjt.v6.i1.28',
-    src: 'wjt.v6.i1.28.png',
-  },
-  {
-    title: 'F1000Research, 2021',
-    body: 'scNetViz: from single cells to networks using Cytoscape',
-    author: 'Krishna Choudhary, et al.',
-    doi: 'https://doi.org/10.12688%2Ff1000research.52460.1',
-    src: 'f1000research.52460.1.png',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC3548679/',
+    img: 'PMC3548679.png',
   },
   {
     title: 'Scientific Data, 2020',
     body: 'Consensus transcriptional regulatory networks of coronavirus-infected human cells',
     author: 'Scott A. Ochsner, et al.',
-    doi: 'https://doi.org/10.1038%2Fs41597-020-00628-6',
-    src: 's41597-020-00628-6.png',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC7509801/',
+    img: 'PMC7509801.png',
   },
   {
     title: 'Frontiers in Genetics, 2019',
     body: 'Beyond Pathway Analysis: Identification of Active Subnetworks in Rett Syndrome',
     author: 'Ryan A. Miller, et al.',
-    doi: 'https://doi.org/10.3389%2Ffgene.2019.00059',
-    src: 'fgene.2019.00059.png',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC6393361/',
+    img: 'PMC6393361.png',
   },
   {
-    title: 'Metabolites, 2021',
-    body: 'Gut Microbiota Dysbiosis Is Associated with Elevated Bile Acids in Parkinson’s Disease',
-    author: 'Peipei Li, et al.',
-    doi: 'https://doi.org/10.3390%2Fmetabo11010029',
-    src: 'metabo11010029.png',
+    title: 'Virologica Sinica, 2026',
+    body: 'Metatranscriptomics uncovers host immune and microbiome signatures specific to and shared between human metapneumovirus and respiratory syncytial virus infections in children',
+    author: 'Hongwei Zhao, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13215961/',
+    img: 'PMC13215961.png',
+  },
+  {
+    title: 'iScience, 2026',
+    body: 'An NT5E loss-of-function variant permits tissue inflammation and hypertension in systemic lupus erythematosus',
+    author: 'Isaac Peabody, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13217859/',
+    img: 'PMC13217859.png',
+  },
+  {
+    title: 'Journal of Pharmaceutical Analysis, 2025',
+    body: 'Unveiling the ‘Eating Poison’ of Polygala tenuifolia xylem: Mood changes and myocardial injury',
+    author: 'Fusheng Zhang, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13217855/',
+    img: 'PMC13217855.png',
+  },
+  {
+    title: 'Journal of Cardiothoracic Surgery, 2026',
+    body: 'Identification of biomarkers associated with mitochondria and macrophage polarization in acute myocardial infarction: a bioinformatics analysis and validation study',
+    author: 'Nan Qu, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13220572/',
+    img: 'PMC13220572.png',
+  },
+  {
+    title: 'Biochemistry and Biophysics Reports, 2026',
+    body: 'Drug repositioning in metastatic prostate cancer based on protein- protein interaction network: Computational and in vitro analysis',
+    author: 'Zakie Saadat, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13214309/',
+    img: 'PMC13214309.png',
+  },
+  {
+    title: 'Frontiers in Medicine, 2026',
+    body: 'A preclinical investigation into the potential associations of geraniin with ulcerative colitis alleviation through integrated multi-omics and in vivo analysis',
+    author: 'Chang Cheng, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13212046/',
+    img: 'PMC13212046.png',
+  },
+  {
+    title: 'Journal of Assisted Reproduction and Genetics, 2025',
+    body: 'Dissecting the genetic association between abnormal sperm parameters and depression: a transcriptome-wide analysis of 157 participants',
+    author: 'Yinwei Chen, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12229347/',
+    img: 'PMC12229347.png',
+  },
+  {
+    title: 'FASEB Journal, 2026',
+    body: 'Stromal-like cells and retinal pigment epithelium modulate choroidal sprouting through galectin-1-dependent and independent pathways',
+    author: 'Magali E Ridano, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12229269/',
+    img: 'PMC12229269.png',
   },
 ]
 
@@ -178,7 +206,7 @@ export function ImageGallery({
               style={{ height: thumbSize, width: thumbSize }}
             >
               <img
-                src={`/images/gallery/${img.src}`}
+                src={`/images/gallery/${img.img}`}
                 alt={img.title ?? ""}
                 draggable={false}
                 className="h-full w-full object-cover block"
@@ -229,7 +257,7 @@ export function ImageGallery({
                         as="h3"
                         className="flex items-center mb-6 text-base font-semibold leading-6 text-gray-900"
                       >
-                        <a href={active.doi} target="_blank" rel="noreferrer" className="mt-1 flex items-start group">
+                        <a href={active.src} target="_blank" rel="noreferrer" className="mt-1 flex items-start group">
                           <h3 className="ml-4 font-semibold text-gray-900 group-hover:text-complement-500">
                             {active.author}
                           </h3>
@@ -237,7 +265,7 @@ export function ImageGallery({
                         </a>
                       </DialogTitle>
                       <img
-                        src={`/images/gallery/${active.src}`}
+                        src={`/images/gallery/${active.img}`}
                         alt={active.title ?? ""}
                         className="px-4 w-full max-w-[90vw] max-h-[90vh] object-contain rounded"
                       />
