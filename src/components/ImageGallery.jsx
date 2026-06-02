@@ -146,6 +146,20 @@ const images = [
     src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11809647/',
     img: 'PMC11809647.png',
   },
+  {
+    title: 'Current Issues in Molecular Biology, 2026',
+    body: 'Transcriptomic Profiling Identifies Potential Prognostic Genes in Vietnamese Patients with Non-Small-Cell Lung Cancer',
+    author: 'Tuan Quoc Bach, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13204278/',
+    img: 'PMC13204278.png',
+  },
+  {
+    title: 'Pharmaceuticals (Basel), 2026',
+    body: 'Effectiveness and Safety of Liuwei Dihuang as an Adjunctive Therapy for Cognitive Impairment: A Systematic Review, Meta-Analysis, and Network Pharmacology Analysis',
+    author: 'Jihyun Hwang, et al.',
+    src: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13209968/',
+    img: 'PMC13209968.png',
+  },
 ]
 
 
@@ -295,7 +309,7 @@ export function ImageGallery({
                       <img
                         src={`/images/gallery/${active.img}`}
                         alt={active.title ?? ""}
-                        className="px-4 w-full max-w-[90vw] max-h-[90vh] object-contain rounded"
+                        className="px-4 w-full max-w-[90vw] max-h-[90vh] mx-auto object-contain rounded"
                       />
                     </div>
                   )}
