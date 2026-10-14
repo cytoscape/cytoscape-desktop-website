@@ -32,6 +32,7 @@ const faqs = [
         encompassing data analysis, visualisation and sharing capabilities. 
         It is also <strong>extensible</strong>, enabling the user to customize their usage via <LinkOut href="https://apps.cytoscape.org/">apps</LinkOut> and services. 
         Cytoscape functionality is <strong>continuously improved</strong> and expanded as part of ongoing, active development.
+        See our <LinkOut href="https://github.com/cytoscape/cytoscape-home/blob/main/roadmap.md#desktop">roadmap</LinkOut> for what&apos;s planned next for Cytoscape Desktop.
       </>,
     },
     {
