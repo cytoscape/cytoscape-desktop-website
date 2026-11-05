@@ -2,7 +2,9 @@
 
 ## Preview
 
-A live preview of the `main` branch can be found at [cytoscape-desktop-website.pages.dev](https://cytoscape-desktop-website.pages.dev/).
+A live preview of the `main` branch can be found at [cytoscape-desktop-website.pages.dev](https://cytoscape-desktop-website.pages.dev/) and [desktop.cytoscape.org](https://desktop.cytoscape.org/).
+
+The Cytoscape Desktop website is published to **Cloudflare Pages**.
 
 ## Build targets
 
